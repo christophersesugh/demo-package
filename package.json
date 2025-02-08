@@ -1,0 +1,23 @@
+{
+  "name": "demo-package",
+  "version": "1.0.0",
+  "description": "An npm demo package",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophersesugh/demo-package.git"
+  },
+  "keywords": [
+    "npm",
+    "package"
+  ],
+  "author": "Christopher S. Aondona <christohybrid185@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christophersesugh/demo-package/issues"
+  },
+  "homepage": "https://github.com/christophersesugh/demo-package#readme"
+}
