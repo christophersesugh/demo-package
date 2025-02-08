@@ -1,5 +1,5 @@
 {
-  "name": "@taqbits/demo-package",
+  "name": "demo-package",
   "version": "1.0.1",
   "description": "An npm demo package",
   "main": "dist/index.js",
