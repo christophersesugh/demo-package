@@ -2,12 +2,22 @@
   "name": "demo-package",
   "version": "1.0.0",
   "description": "An npm demo package",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
-    "build": "tsc",
-    "test": "npm run test",
-    "ci": "npm run build",
-    "format": "prettier --write ."
+    "build": "tsup",
+    "test": "vitest run",
+    "lint": "tsc",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint && npm run test"
   },
   "repository": {
     "type": "git",
@@ -28,7 +38,10 @@
   ],
   "type": "module",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.3",
     "prettier": "^3.4.2",
-    "typescript": "^5.7.3"
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
   }
 }
